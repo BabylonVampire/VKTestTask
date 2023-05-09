@@ -20,6 +20,9 @@ const MainPage = () => {
 		setTower(undefined);
 		setFloor(undefined);
 		setRoom(undefined);
+		setData(undefined);
+		setTime(undefined);
+		setComment(undefined);
 	}
 
 	const sendData = () => {
@@ -67,30 +70,30 @@ const MainPage = () => {
 			<div className="input_form">
 				<div className="input_container">
 					<div className="title">Выбор башни</div>
-					<SelectValue options={options.towerOptions} callBack={setTower} value={tower}/>
+					<SelectValue options={options.towerOptions} callBack={setTower} value={tower} />
 				</div>
 				<div className="input_container">
 					<div className="title">Выбор этажа</div>
-					<SelectValue options={options.floorOptions} callBack={setFloor} value={floor}/>
+					<SelectValue options={options.floorOptions} callBack={setFloor} value={floor} />
 				</div>
 				<div className="input_container">
 					<div className="title">Выбор переговорной</div>
-					<SelectValue options={options.roomOptions} callBack={setRoom} value={room}/>
+					<SelectValue options={options.roomOptions} callBack={setRoom} value={room} />
 				</div>
 				<div className="input_container">
 					<div className="title">Выбор даты посещения</div>
-					<DayPicker callBack={setData} />
+					<DayPicker callBack={setData} value={data} />
 				</div>
 				<div className="input_container">
 					<div className="title">Выбор времени посещения</div>
-					<TimeRange callBack={setTime} />
+					<TimeRange callBack={setTime} value={time} />
 				</div>
 				<div className="input_container">
 					<div className="title">Комментарий</div>
-					<InputArea callBack={setComment} />
+					<InputArea callBack={setComment} value={comment} />
 				</div>
-				<Button type="primary" onClick={clearData}>Очистить форму</Button>
-				<Button type="primary" onClick={sendData} >Отправить форму</Button>
+				<Button type="default" onClick={clearData}>Очистить форму</Button>
+				<Button type="default" onClick={sendData} >Отправить форму</Button>
 			</div>
 		</div>
 	)

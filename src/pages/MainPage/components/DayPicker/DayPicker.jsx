@@ -1,14 +1,14 @@
 import { DatePicker } from 'antd';
 import React from 'react'
+import moment from 'moment';
 
-const DayPicker = ({callBack}) => {
-
-	const getDate = (date, dateString) => {
-		callBack(dateString);
-	}
+const DayPicker = ({ callBack, value }) => {
 
 	return (
-		<DatePicker onChange={getDate}/>
+		<DatePicker
+			onChange={(date, dateString) => callBack(dateString)}
+			value={value !== undefined ? moment(value) : undefined}
+		/>
 	)
 }
 
